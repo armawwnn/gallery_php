@@ -11,14 +11,14 @@ include_once ("init.php");
             </h1>
             <?php
 
+            $found_user = User::find_user_by_id(2);
+
+            $user = User::instantiation($found_user);
+
+            echo $user->last_name;
 
 
 
-            $sql= "SELECT * FROM users WHERE id=1";
-            $result = $databse->query($sql);
-            $user_found = mysqli_fetch_array($result);
-
-            echo $user_found['username'];
 
             ?>
             <ol class="breadcrumb">
