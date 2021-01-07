@@ -15,7 +15,7 @@ include_once ("init.php");
 
             $user = User::instantiation($found_user);
 
-            echo $user->last_name;
+
 
 
 
