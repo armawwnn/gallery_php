@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1256f583-dfd6-47db-82cf-68daab248e36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/includes/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/top_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/top_nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../php/oop/test.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel/test0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -43,7 +47,8 @@
       <workItem from="1609792438269" duration="11735000" />
       <workItem from="1609847847436" duration="1536000" />
       <workItem from="1609851523950" duration="9503000" />
-      <workItem from="1609964875185" duration="17379000" />
+      <workItem from="1609964875185" duration="20059000" />
+      <workItem from="1610310087971" duration="1797000" />
     </task>
     <servers />
   </component>

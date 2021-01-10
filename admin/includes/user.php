@@ -35,6 +35,17 @@ class User{
         return $the_object_array;
     }
 
+    public static function verify_user ($username,$password){
+        global $databse;
+        $username = $databse->escape_string($username);
+        $password = $databse->escape_string($password);
+
+        $sql = "SELECT * FROM users WHERE username = '{$username}' AND password = '{$password}' LIMIT 1";
+
+        $the_resault_array = self::find_this_query($sql);
+        return !empty($the_resault_array) ? array_shift($the_resault_array) : false;
+    }
+
     public static function instantiation($the_record){
         $the_object = new self;
 
@@ -49,5 +60,6 @@ class User{
         $object_properties = get_object_vars($this);
         return array_key_exists($the_attribute , $object_properties );
     }
+
 }
 ?>
