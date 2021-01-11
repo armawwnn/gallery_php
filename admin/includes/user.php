@@ -1,5 +1,5 @@
 <?php
-
+include_once ('init.php');
 
 class User{
 
@@ -61,5 +61,30 @@ class User{
         return array_key_exists($the_attribute , $object_properties );
     }
 
+
+    public function create() {
+        global $databse;
+//        $sql = "INSERT INTO users (username, password, first_name, last_name) VALUES ("$databse->escape_string($this->username)", "$databse->escape_string($this->password)", "$databse->escape_string($this->first_name)", "$databse->escape_string($this->last_name)")";
+
+
+        $sql  = "INSERT INTO users (username, password, first_name, last_name)";
+        $sql .="VALUES('";
+        $sql .= $databse->escape_string($this->username) . "', '";
+        $sql .= $databse->escape_string($this->password) . "', '";
+        $sql .= $databse->escape_string($this->first_name) . "', '";
+        $sql .= $databse->escape_string($this->last_name) . "')";
+
+
+if ($databse->query($sql)) {
+    $this->id = $databse->the_insert_id();
+    return true;
+}else{
+    return false;
 }
+
+    }
+
+}
+
+
 ?>

@@ -34,3 +34,11 @@ include_once ("init.php");
     <!-- /.row -->
 
 </div>
+<?php
+$user = new User();
+$user->username= "test";
+$user->password= "test";
+$user->first_name= "test";
+$user->last_name= "test";
+$user->create();
+?>
