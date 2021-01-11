@@ -82,7 +82,22 @@ if ($databse->query($sql)) {
     return false;
 }
 
+    }//create Method
+
+    public function update(){
+        global $databse;
+        $sql  = "UPDATE users SET ";
+        $sql .="username= '" . $databse->escape_string($this->username) . "', ";
+        $sql .="password= '" . $databse->escape_string($this->password) . "', ";
+        $sql .="first_name= '" . $databse->escape_string($this->first_name) . "', ";
+        $sql .="last_name= '" . $databse->escape_string($this->last_name) . "' ";
+        $sql .=" WHERE id= " . $databse->escape_string($this->id);
+        $databse->query($sql);
+
+        return (mysqli_affected_rows($databse->connection) == 1) ? true : false;
+
     }
+
 
 }
 
