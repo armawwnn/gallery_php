@@ -75,17 +75,32 @@ class User{
         return $properties;
     }
 
+    protected function clean_properties (){
+        global $databse;
+
+        $clean_properties = array();
+
+        foreach ($this->properties() as $key => $value){
+
+            $clean_properties[$key] = $databse->escape_string($value);
+
+        }
+
+        return $clean_properties;
+    }
+
     public function save(){
 
         return isset($this->id) ? $this->update() : $this->create();
 
     }
 
+
     public function create() {
         global $databse;
 
 
-        $properties = $this->properties();
+        $properties = $this->clean_properties();
 
         $sql  = "INSERT INTO " . self::$db_table . "(" . implode("," , array_keys($properties)). ")";
         $sql .="VALUES('". implode("','" , array_values($properties)) ."')";
@@ -102,11 +117,15 @@ if ($databse->query($sql)) {
 
     public function update(){
         global $databse;
+
+        $properties = $this->clean_properties();
+        $properties_pair = array();
+        foreach ($properties as $key => $value){
+            $properties_pair[] = "{$key}='{$value}'";
+        }
+
         $sql  = "UPDATE " . self::$db_table . " SET ";
-        $sql .="username= '" . $databse->escape_string($this->username) . "', ";
-        $sql .="password= '" . $databse->escape_string($this->password) . "', ";
-        $sql .="first_name= '" . $databse->escape_string($this->first_name) . "', ";
-        $sql .="last_name= '" . $databse->escape_string($this->last_name) . "' ";
+        $sql .=implode(", ",$properties_pair);
         $sql .=" WHERE id= " . $databse->escape_string($this->id);
         $databse->query($sql);
 
