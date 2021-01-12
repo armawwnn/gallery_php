@@ -36,17 +36,23 @@ include_once ("init.php");
 </div>
 <?php
 //########### CRUD test ##########################
-//$user = new User();
-//$user->username= "test";
-//$user->password= "test";
-//$user->first_name= "test";
-//$user->last_name= "test";
-//$user->create();
+$user = new User();
+$user->username= "testNew";
+$user->password= "testNew";
+$user->first_name= "testNew";
+$user->last_name= "testNew";
+$user->create();
 //--------------------------------------
 
-$user = User::find_user_by_id(4);
-$user->last_name = "changed";
-$user->update();
+//$user = User::find_user_by_id(4);
+//$user->last_name = "changed";
+//$user->update();
 
+//$user = User::find_user_by_id(6);
+//$user->password = "1002";
+//$user->save();
+
+//$user = User::find_user_by_id(6);
+//$user->delete();
 
 ?>
